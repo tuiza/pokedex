@@ -1,11 +1,14 @@
 import { ThemeProvider } from 'styled-components';
 import theme from './src/global/theme';
-import Welcome from './src/pages/Welcome';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './src/routes';
 
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Welcome/>
-  </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <Routes/>
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }

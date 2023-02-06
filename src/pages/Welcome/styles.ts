@@ -9,20 +9,40 @@ export const Container = styled.SafeAreaView`
 `
 
 export const Content = styled.View`
+${({ theme }) => css`
     height: 70%;
     justify-content: center;
     align-items: center;
+    background-color: ${theme.types.water};
+`}
+`
 
+export const WrapperAnimation = styled.View`
+    ${({theme}) => css`
+    height: 300px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(30deg);
+    border-radius: 100px;
+    background-color: ${theme.colors.backgroundWater};
+    `
+    }
+`
+
+export const WrapperImage = styled.View`
+    transform: rotate(-30deg);
 `
 
 export const Footer = styled.View`
     ${({theme}) => css`
     height: 30%;
-    background-color: ${theme.types.water};
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     justify-content: center;
     align-items: center;
+    background-color: ${theme.colors.background};
+    padding: 20px;
     `
     }
 `
@@ -31,6 +51,7 @@ ${({theme}) => css`
     color: ${theme.colors.text_white};
     font-size: 20px;
     font-weight: bold;
+    margin-top: 20px;
     `
     }
 

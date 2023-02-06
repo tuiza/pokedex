@@ -2,24 +2,33 @@ import React from 'react';
 import AnimatedLottieView from 'lottie-react-native';
 import pokemon from './pokemon.json'
 import * as S from './styles'
+import Button from '../../components/Button';
+import {  useNavigation } from '@react-navigation/native';
 
-export default function Welcome() {
+export default function Welcome({navigation}) {
+  // const navigation = useNavigation()
   return (
       <S.Container>
           <S.Content>
+              <S.WrapperAnimation>
+                  <S.WrapperImage>
               <AnimatedLottieView
                   style={{ width: 200 }}
                   source={pokemon}
                   autoPlay
                   loop />
-         </S.Content>
-              <S.Footer>
+                      
+                </S.WrapperImage>
+                  </S.WrapperAnimation>
               <S.Title>
                     Bem-vindo a sua Pokédex
               </S.Title>
               <S.SubTitle>
-                    Encontre o seu pokémon favorito
+                    Encontre os seus Pokémons favoritos
               </S.SubTitle>
+         </S.Content>
+          <S.Footer>
+              <Button title="Iniciar" onPress={()=> navigation.navigate('Home')} />
               </S.Footer>
      </S.Container>        
   )

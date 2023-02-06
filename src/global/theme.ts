@@ -1,10 +1,10 @@
 export default {
     colors: {
         background: '#fff',
-        backgroundWater: '#58ABF6',
+        backgroundWater: '#57B2DC',
         text_white: '#fff',
     },
     types: {
-        water: '#58ABF6',
+        water: '#4A90DA',
     }
 }
