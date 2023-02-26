@@ -13,7 +13,7 @@ ${({ theme }) => css`
     height: 70%;
     justify-content: center;
     align-items: center;
-    background-color: ${theme.types.water};
+    background-color: ${theme.colors.backgroundCard.water};
 `}
 `
 
@@ -25,7 +25,7 @@ export const WrapperAnimation = styled.View`
     align-items: center;
     transform: rotate(30deg);
     border-radius: 100px;
-    background-color: ${theme.colors.backgroundWater};
+    background-color: ${theme.colors.backgroundCard.water};
     `
     }
 `
@@ -48,7 +48,7 @@ export const Footer = styled.View`
 `
 export const Title = styled.Text`
 ${({theme}) => css`
-    color: ${theme.colors.text_white};
+    color: ${theme.colors.light_text};
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
@@ -58,7 +58,7 @@ ${({theme}) => css`
 `
 export const SubTitle = styled.Text`
 ${({theme}) => css`
-    color: ${theme.colors.text_white};
+    color: ${theme.colors.light_text};
     font-size: 16px;
     margin-top: 20px;
     `

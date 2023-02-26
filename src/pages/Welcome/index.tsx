@@ -5,8 +5,8 @@ import * as S from './styles'
 import Button from '../../components/Button';
 import {  useNavigation } from '@react-navigation/native';
 
-export default function Welcome({navigation}) {
-  // const navigation = useNavigation()
+export default function Welcome() {
+  const { navigate } = useNavigation()
   return (
       <S.Container>
           <S.Content>
@@ -28,7 +28,7 @@ export default function Welcome({navigation}) {
               </S.SubTitle>
          </S.Content>
           <S.Footer>
-              <Button title="Iniciar" onPress={()=> navigation.navigate('Home')} />
+              <Button title="Iniciar" onPress={()=> navigate('Home')} />
               </S.Footer>
      </S.Container>        
   )

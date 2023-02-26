@@ -3,11 +3,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 
+const Stack = createNativeStackNavigator();
 export default function Routes() { 
-    const Stack = createNativeStackNavigator();
     return (
         <Stack.Navigator
-            initialRouteName="Home"
+             screenOptions={{
+                headerShown: false,
+            }}
+            initialRouteName="Welcome"
             >
             <Stack.Screen
                 component={Welcome}

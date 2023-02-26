@@ -1,11 +1,12 @@
 import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-    margin: 30px;
+    margin: 20px;
     flex: 1;
-`
+    `
 export const TitleContainer = styled.View`
     display: flex;
+    margin-top: 20px;
     margin-bottom: 20px;
     justify-content: space-between;
     height: 80px;
@@ -26,4 +27,5 @@ export const Filter = styled.TextInput`
     text-align: center;
     align-items: center;
     color: red;
+    margin-bottom: 20px;
 `

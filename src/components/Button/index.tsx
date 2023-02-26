@@ -6,9 +6,9 @@ type Props = {
     title: string
 } & TouchableOpacityProps
 
-export default function Button({title}: Props) {
+export default function Button({title, ...rest}: Props) {
     return (
-        <S.Container>
+        <S.Container {...rest}>
             <S.Title>{title}</S.Title>
         </S.Container>
     )

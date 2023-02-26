@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles'
-import api from '../../service/api' 
+import api from '../../service/api'
+import Card from '../../components/Card';
+import { FlatList } from 'react-native';
+import { FadeAnimation } from '../../components/Fade';
 
-type PokemonTypes = {
-    type: string
+export type PokemonTypes = {
+    type: Type
 }
-type Pokemon = {
+
+export type Type = {
+    name: string
+    url: string
+}
+
+export type Pokemon = {
     name: string
     url: string
     id: number
@@ -21,7 +30,7 @@ export default function Home() {
     async function getMoroInfo(url: string): Promise<RequestMoreInfo> {
         const response = await api.get(url)
         const { id, types } = response.data
-        return {id, types}
+        return { id, types }
     }
     useEffect(() => {
         async function getPokemons() {
@@ -30,7 +39,6 @@ export default function Home() {
             if (results) {
                 const payloadPokemons = await Promise.all(
                     results.map(async (pokemon: Pokemon) => {
-                        console.log(pokemon)
                         const { id, types } = await getMoroInfo(pokemon.url)
                         return {
                             name: pokemon.name,
@@ -38,26 +46,33 @@ export default function Home() {
                             types,
                         }
                     })
-                
-                    )
-                    setPokemons(payloadPokemons)
+
+                )
+                setPokemons(payloadPokemons)
             }
         }
         getPokemons()
     }, [])
-  return (
-      <S.Container>
-          <S.TitleContainer>
-              <S.Title>Pokédex</S.Title>
-              <S.SubTitle>Procure por Pokémon pelo nome ou usando o Número Nacional da Pokédex. </S.SubTitle>
-          </S.TitleContainer>
-              <S.Filter
-                  placeholder='Qual Pokémon você está procurando?'
-                  placeholderTextColor='gray'
-          />
-          {pokemons.map(pokemon => 
-              <S.SubTitle>{pokemon.name}</S.SubTitle>
-          )}
-     </S.Container>        
-  )
+    return (
+        <S.Container>
+            <S.TitleContainer>
+                <S.Title>Pokédex</S.Title>
+                <S.SubTitle>Procure por Pokémon pelo nome ou usando o Número Nacional da Pokédex. </S.SubTitle>
+            </S.TitleContainer>
+            <S.Filter
+                placeholder='Qual Pokémon você está procurando?'
+                placeholderTextColor='gray'
+            />
+            <FlatList
+                showsVerticalScrollIndicator={false}
+                data={pokemons}
+                keyExtractor={pokemon => pokemon.name}
+                renderItem={({ item }) =>
+                    <FadeAnimation>
+                        <Card pokemon={item} />
+                    </FadeAnimation>}
+
+            />
+        </S.Container>
+    )
 }

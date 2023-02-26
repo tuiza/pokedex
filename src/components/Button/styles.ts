@@ -6,7 +6,7 @@ ${({theme}) => css`
     width: 100%;
     justify-content: center;
     align-items: center;
-    background-color: ${theme.types.water};
+    background-color: ${theme.colors.boxType.water};
     border-radius: 10px;
     `
     }
@@ -14,7 +14,7 @@ ${({theme}) => css`
 export const Title = styled.Text`
 ${({theme}) => css`
     font-size: 14px;
-    color: ${theme.colors.text_white};
+    color: ${theme.colors.light_text};
     `
     }
 `

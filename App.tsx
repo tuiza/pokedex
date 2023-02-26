@@ -5,10 +5,10 @@ import Routes from './src/routes';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+        <NavigationContainer>
         <Routes/>
-      </ThemeProvider>
     </NavigationContainer>
+      </ThemeProvider>
   );
 }
