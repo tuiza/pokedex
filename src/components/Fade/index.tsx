@@ -26,8 +26,8 @@ export function FadeAnimation({ children, ...rest }: FadeAnimationProps) {
     })
 
     useEffect(() => {
-        cardOpacity.value = withTiming(1, { duration: 3000 }) // vai de 0% a 100% de opacidade em 1 seg
-        cardOffSet.value = withTiming(0, { duration: 2000 }) // vai pro ponto 0 no eixo x da tela em 1 seg
+        cardOpacity.value = withTiming(1, { duration: 1000 }) // vai de 0% a 100% de opacidade em 1 seg
+        cardOffSet.value = withTiming(0, { duration: 1000 }) // vai pro ponto 0 no eixo x da tela em 1 seg
     }, [])
 
     return (
