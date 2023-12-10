@@ -1,9 +1,9 @@
-import styled, {css} from "styled-components/native";
+import styled, {css} from 'styled-components/native';
 
 
 
-type CardProps = {
-    type: string //tipar com enum
+interface CardProps {
+    type: string // tipar com enum
 }
 
 export const Card = styled.TouchableOpacity<CardProps>`
@@ -16,7 +16,7 @@ ${({ theme, type }) => css`
     margin-top: 30px;
     justify-content: space-between;
     padding: 15px;
-    background-color: ${theme.colors.backgroundCard[type]};
+    background-color: ${theme.colors.boxType[type]};
     border-radius: 10px;
     `
     }

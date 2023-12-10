@@ -1,7 +1,7 @@
-import { Pokemon, PokemonTypes } from "../types/Pokemon"
-import api from "./api"
+import { type Pokemon, type PokemonTypes } from '../types/Pokemon'
+import api from './api'
 
-type RequestMoreInfo = {
+interface RequestMoreInfo {
     id: string
     types: PokemonTypes[]
 }

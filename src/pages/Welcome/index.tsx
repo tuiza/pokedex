@@ -28,7 +28,7 @@ export default function Welcome() {
               </S.SubTitle>
          </S.Content>
           <S.Footer>
-              <Button title="Iniciar" onPress={()=> navigate('Home')} />
+              <Button title="Iniciar" onPress={()=> { navigate('Home'); }} />
               </S.Footer>
      </S.Container>        
   )
