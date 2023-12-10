@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { ViewProps, useWindowDimensions } from 'react-native'
+import { type ViewProps, useWindowDimensions } from 'react-native'
 import { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
 import * as S from './styles'
 

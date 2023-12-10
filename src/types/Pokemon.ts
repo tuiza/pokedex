@@ -1,17 +1,15 @@
-
-export type Type = {
+export interface Type {
   name: string;
   url: string;
-};
+}
 
-export type PokemonTypes = {
+export interface PokemonTypes {
   type: Type;
-};
+}
 
-
-export type Pokemon = {
+export interface Pokemon {
   name: string;
   url: string;
   id: number;
   types: PokemonTypes[];
-};
+}
