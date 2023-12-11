@@ -1,17 +1,24 @@
-import React from 'react';
 import * as S from './styles';
-import dots from '../../../assets/img/dots.png';
-import pokeball from '../../../assets/img/pokeballCard.png';
+import dots from '@assets/img/dots.png';
+import pokeball from '@assets/img/pokeballCard.png';
 import { type TouchableOpacityProps } from 'react-native';
-import { type Pokemon } from '../../types/Pokemon';
+import { type Pokemon } from 'src/@types/pokemon';
+
+import { useNavigation } from '@react-navigation/native';
+import { type DetailsProps } from '@navigation/types';
 
 type Props = {
   pokemon: Pokemon;
 } & TouchableOpacityProps;
 
 export default function Card({ pokemon, ...rest }: Props) {
+  const navigation = useNavigation<DetailsProps>();
+  const handlePress = () => {
+    navigation.navigate('Details', { pokemon });
+  };
+
   return (
-    <S.Card type={pokemon.types[0].type.name} {...rest}>
+    <S.Card type={pokemon.types[0].type.name} {...rest} onPress={handlePress}>
       <S.InfosWrapper>
         <S.Number>#{pokemon.id}</S.Number>
         <S.Name>{pokemon.name}</S.Name>

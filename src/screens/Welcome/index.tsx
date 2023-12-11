@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedLottieView from 'lottie-react-native';
 import pokemon from './pokemon.json'
 import * as S from './styles'
-import Button from '../../components/Button';
+import Button from '@components/Button';
 import {  useNavigation } from '@react-navigation/native';
 
 export default function Welcome() {

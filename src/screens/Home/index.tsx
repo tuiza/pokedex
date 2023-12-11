@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import * as S from './styles';
-import Card from '../../components/Card';
+import Card from '@components/Card';
 import { FlatList } from 'react-native';
-import { FadeAnimation } from '../../components/Fade';
-import { type Pokemon } from '../../types/Pokemon';
-import { getPokemonsService } from '../../service/pokemons';
+import { FadeAnimation } from '@components/Fade';
+import { type Pokemon } from 'src/@types/pokemon';
+import { getPokemonsService } from '@services/pokemons';
 
 export default function Home() {
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
