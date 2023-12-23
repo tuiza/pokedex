@@ -1,4 +1,4 @@
-import { type Pokemon, type PokemonTypes } from '../@types/pokemon';
+import type { PokemonDetails, Pokemon, PokemonTypes } from '../@types/pokemon';
 import api from './api';
 
 interface RequestMoreInfo {
@@ -29,4 +29,11 @@ export async function getPokemonsService(): Promise<Pokemon[]> {
     return payloadPokemons;
   }
   return [];
+}
+
+
+export async function getPokemonDetailsService(pokemonId: number): Promise<PokemonDetails> {
+  const response = await api.get(`/pokemon/${pokemonId}`);
+  const { name, types, abilities, id } = response.data;
+  return { name, types, abilities, id };
 }

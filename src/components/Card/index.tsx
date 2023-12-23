@@ -14,7 +14,7 @@ type Props = {
 export default function Card({ pokemon, ...rest }: Props) {
   const navigation = useNavigation<DetailsProps>();
   const handlePress = () => {
-    navigation.navigate('Details', { pokemon });
+    navigation.navigate('Details', { pokemonId: pokemon.id });
   };
 
   return (

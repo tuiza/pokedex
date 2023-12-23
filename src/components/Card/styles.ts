@@ -1,9 +1,7 @@
+import type { Type } from '@types/pokemon';
 import styled, {css} from 'styled-components/native';
-
-
-
 interface CardProps {
-    type: string // tipar com enum
+    type: Type['name']
 }
 
 export const Card = styled.TouchableOpacity<CardProps>`
@@ -16,7 +14,7 @@ ${({ theme, type }) => css`
     margin-top: 30px;
     justify-content: space-between;
     padding: 15px;
-    background-color: ${theme.colors.boxType[type]};
+    background-color: ${theme.colors.backgroundCard[type]};
     border-radius: 10px;
     `
     }
