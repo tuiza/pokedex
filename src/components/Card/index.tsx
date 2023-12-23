@@ -1,4 +1,3 @@
-import React from 'react';
 import * as S from './styles';
 import dots from '../../../assets/img/dots.png';
 import pokeball from '../../../assets/img/pokeballCard.png';

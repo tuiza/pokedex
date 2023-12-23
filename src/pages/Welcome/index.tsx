@@ -1,4 +1,3 @@
-import React from 'react';
 import AnimatedLottieView from 'lottie-react-native';
 import pokemon from './pokemon.json'
 import * as S from './styles'
