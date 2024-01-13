@@ -13,16 +13,20 @@ interface Ability {
   ability: {
     name: string;
   };
+  is_hidden: boolean;
 }
 export interface Pokemon {
   name: string;
   url: string;
   id: number;
   types: PokemonTypes[];
-
 }
 
 export interface PokemonDetails extends Omit<Pokemon, 'url'> {
   abilities: Ability[];
+  height: number;
+  weight: number;
+  species: {
+    name: string;
+  };
 }
-

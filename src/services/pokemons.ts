@@ -31,9 +31,7 @@ export async function getPokemonsService(): Promise<Pokemon[]> {
   return [];
 }
 
-
 export async function getPokemonDetailsService(pokemonId: number): Promise<PokemonDetails> {
   const response = await api.get(`/pokemon/${pokemonId}`);
-  const { name, types, abilities, id } = response.data;
-  return { name, types, abilities, id };
+  return response.data;
 }

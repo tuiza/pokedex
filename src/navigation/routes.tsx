@@ -9,7 +9,7 @@ export default function Routes() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}
       initialRouteName="Welcome"
     >
