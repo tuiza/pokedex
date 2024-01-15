@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { getPokemonDetailsService } from '@services/pokemons';
 import { Alert } from 'react-native';
 import type { PokemonDetails } from '@types/pokemon';
+import Header from './Header';
 
 export default function Details(): JSX.Element {
   const route = useRoute<DetailsRouteProps>();
@@ -48,10 +49,7 @@ export default function Details(): JSX.Element {
     <S.Container>
       {!loading && (
         <>
-          <S.Header color={pokemon.types[0].type.name}>
-            <S.Title color={pokemon.types[0].type.name}>{pokemon.name}</S.Title>
-            <S.Title color={pokemon.types[0].type.name}>#{pokemon.id}</S.Title>
-          </S.Header>
+          <Header pokemon={pokemon} />
           <S.Content>
             <S.Info>
               <S.InfoText>sobre</S.InfoText>
