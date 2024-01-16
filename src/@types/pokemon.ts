@@ -22,6 +22,13 @@ export interface Pokemon {
   types: PokemonTypes[];
 }
 
+export interface Stats {
+  base_stat: number;
+  stat: {
+    name: string;
+  };
+}
+
 export interface PokemonDetails extends Omit<Pokemon, 'url'> {
   abilities: Ability[];
   height: number;
@@ -29,4 +36,5 @@ export interface PokemonDetails extends Omit<Pokemon, 'url'> {
   species: {
     name: string;
   };
+  stats: Stats[];
 }

@@ -2,22 +2,33 @@ import { type Type } from '@types/pokemon';
 import styled from 'styled-components/native';
 
 interface TextProps {
-  color: Type['name'];
+  type: Type['name'];
 }
 
-export const Container = styled.SafeAreaView``;
+export const Container = styled.SafeAreaView<TextProps>`
+  background-color: ${({ theme, type }) => theme.colors.backgroundCard[type]};
+  padding: 40px;
+`;
 
-export const Title = styled.Texts`
+export const Header = styled.View`
+  flex-direction: row;
+`;
+
+export const PokemonImage = styled.Image`
+  width: 125px;
+  height: 125px;
+`;
+
+export const Title = styled.Text`
   font-size: 32px;
-  color: ${({ theme, color }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.background};
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: capitalize;
 `;
 
 export const BackButton = styled.TouchableOpacity`
-  flex-direction: row;
-  align-items: center;
+  margin: 10px;
 `;
 
 export const Image = styled.Image`
@@ -28,30 +39,23 @@ export const Image = styled.Image`
   right: 50px;
 `;
 
-export const Number = styled.Text`
+export const Info = styled.View`
   flex-direction: column;
-  color: ${({ theme }) => theme.colors.text};
+`;
+
+export const Number = styled.Text<TextProps>`
+  flex-direction: column;
+  color: ${({ theme }) => theme.colors.light_text};
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
 `;
 
-export const Header = styled.View<TextProps>`
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: ${({ theme, color }) => theme.colors.backgroundCard[color]};
-  height: 250px;
-`;
-
-export const Content = styled.View`
+export const Pokemon = styled.View`
   position: relative;
   bottom: 25px;
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 30px;
   height: 100%;
-`;
-
-export const Info = styled.View`
-  padding: 20px;
 `;
 
 export const InfoContainer = styled.View`
