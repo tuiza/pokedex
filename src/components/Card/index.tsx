@@ -1,8 +1,9 @@
 import * as S from './styles';
 import dots from '@assets/img/dots.png';
 import pokeball from '@assets/img/pokeballCard.png';
-import { type TouchableOpacityProps } from 'react-native';
-import { type Pokemon } from 'src/@types/pokemon';
+import { type TouchableOpacityProps, type ImageSourcePropType } from 'react-native';
+import { type Type, type Pokemon } from 'src/@types/pokemon';
+import * as icons from '../../imgs/pokemonTypes';
 
 import { useNavigation } from '@react-navigation/native';
 import { type DetailsProps } from '@navigation/types';
@@ -17,6 +18,10 @@ export default function Card({ pokemon, ...rest }: Props) {
     navigation.navigate('Details', { pokemonId: pokemon.id });
   };
 
+  const typeIcons: Record<Type['name'], ImageSourcePropType> = {
+    ...icons,
+  };
+
   return (
     <S.Card type={pokemon.types[0].type.name} {...rest} onPress={handlePress}>
       <S.InfosWrapper>
@@ -25,6 +30,7 @@ export default function Card({ pokemon, ...rest }: Props) {
         <S.TypesContainer>
           {pokemon.types.map((type, i) => (
             <S.TypeWrapper key={i} type={type.type.name}>
+              <S.TypeIcon source={typeIcons[type.type.name]} />
               <S.TypeText type={type.type.name}>{type.type.name}</S.TypeText>
             </S.TypeWrapper>
           ))}
